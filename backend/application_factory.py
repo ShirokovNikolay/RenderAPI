@@ -1,5 +1,6 @@
 from api import router as api_router
 from api.exception_handlers import register_exception_handlers
+from api.graphql.main import router as graphql_router
 from api.main_views import router as main_router
 from core.logging import configure_grafana, configure_logging
 from fastapi import FastAPI
@@ -8,6 +9,7 @@ from lifespan import lifespan
 
 def include_routers(app: FastAPI) -> None:
     app.include_router(main_router)
+    app.include_router(graphql_router)
     app.include_router(api_router)
 
 
