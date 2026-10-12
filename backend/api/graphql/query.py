@@ -1,8 +1,13 @@
 import strawberry
 
 from api.graphql.context import Context
+from api.graphql.graphql_types.query import (
+    ProjectsType,
+    ProjectType,
+    TagListType,
+    UserType,
+)
 from api.graphql.mock_services import MockS3Client
-from api.graphql.schemas import ProjectType, TagListType, UserType, ProjectsType
 
 
 @strawberry.type
